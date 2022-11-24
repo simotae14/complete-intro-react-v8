@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/simotae14/complete-intro-react-v8#readme",
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@vitejs/plugin-react": "^2.1.0",
     "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",

@@ -48,12 +48,15 @@ const SearchParams = () => {
           <input
             name="location"
             id="location"
-            placeholder="Location" 
+            placeholder="Location"
+            className="search-input"
+            type="text"
           />
         </label>
         <label htmlFor="animal">
           Animal
           <select
+            className="search-input"
             id="animal"
             value={animal}
             onChange={(e) => {
@@ -71,6 +74,7 @@ const SearchParams = () => {
         <label htmlFor="breed">
           Breed
           <select
+            className="search-input grayed-out-disabled"
             id="breed"
             disabled={breeds.length === 0}
             name="breed"
@@ -83,7 +87,11 @@ const SearchParams = () => {
             }
           </select>
         </label>
-        <button>Submit</button>
+        <button
+          className="rounded border-none bg-orange-500 px-6 py-2 text-white hover:opacity-50"
+        >
+          Submit
+        </button>
       </form>
       <Results pets={pets} />
     </div>
