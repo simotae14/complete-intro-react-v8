@@ -25,7 +25,7 @@ const Details = () => {
   const pet = results.data.pets[0];
 
   return (
-    <div className="details">
+    <div className="bg-slate-50 mx-auto my-0 p-4 mb-6 rounded-md w-275 shadow">
       <Carousel images={pet.images} />
       <div>
         <h1>{pet.name}</h1>
@@ -39,6 +39,7 @@ const Details = () => {
                 <h1>Would you like to adopt {pet.name}</h1>
                 <div className="buttons">
                   <button
+                    className="mr-4"
                     onClick={() => {
                       setAdoptedPet(pet);
                       navigate("/");
@@ -46,7 +47,7 @@ const Details = () => {
                   >
                     Yes
                   </button>
-                  <button onClick={() => setShowModal(false)}>No</button>
+                  <button className="mr-4" onClick={() => setShowModal(false)}>No</button>
                 </div>
               </div>
             </Modal>
