@@ -13,10 +13,10 @@
   },
   "plugins": ["react", "import", "jsx-a11y"],
   "parserOptions": {
-    "ecmaVersion": 2022, // version of JS used
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true // we use JSX
+      "jsx": true
     }
   },
   "env": {

@@ -1,3 +1,4 @@
+// mostly code from reactjs.org/docs/error-boundaries.html
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
