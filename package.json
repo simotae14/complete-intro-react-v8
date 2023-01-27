@@ -9,37 +9,31 @@
     "build:client": "vite build --outDir ../dist/client",
     "build:server": "vite build --outDir ../dist/server --ssr ServerApp.jsx",
     "build": "npm run build:client && npm run build:server",
+    "start": "node --experimental-fetch server.js",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simotae14/complete-intro-react-v8.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Simone Taeggi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/simotae14/complete-intro-react-v8/issues"
   },
   "homepage": "https://github.com/simotae14/complete-intro-react-v8#readme",
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.3",
     "@vitejs/plugin-react": "^2.1.0",
-    "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "postcss": "^8.4.18",
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
-    "tailwindcss": "^3.1.8",
     "vite": "^3.1.4"
   },
   "dependencies": {

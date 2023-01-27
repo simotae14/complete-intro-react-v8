@@ -5,8 +5,7 @@ import AdoptedPetContext from "./AdoptedPetContext";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import fetchPet from "./fetchPet";
-
-const Modal = lazy(() => import('./Modal'));
+import Modal from "./Modal";
 
 const Details = () => {
   const [showModal, setShowModal] = useState(false);
@@ -26,7 +25,7 @@ const Details = () => {
   const pet = results.data.pets[0];
 
   return (
-    <div className="bg-slate-50 mx-auto my-0 p-4 mb-6 rounded-md w-275 shadow">
+    <div className="details">
       <Carousel images={pet.images} />
       <div>
         <h1>{pet.name}</h1>
@@ -48,7 +47,7 @@ const Details = () => {
                   >
                     Yes
                   </button>
-                  <button className="mr-4" onClick={() => setShowModal(false)}>No</button>
+                  <button onClick={() => setShowModal(false)}>No</button>
                 </div>
               </div>
             </Modal>
@@ -59,10 +58,10 @@ const Details = () => {
   );
 };
 
-function DetailsErrorBoundary() {
+function DetailsErrorBoundary(props) {
   return (
     <ErrorBoundary>
-      <Details />
+      <Details {...props} />
     </ErrorBoundary>
   );
 }

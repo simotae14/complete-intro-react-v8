@@ -30,6 +30,7 @@ app.use((req, res) => {
       // do error handling
     },
     onAllReady() {
+      // last thing to write
       res.write(parts[1]);
       res.end();
     },

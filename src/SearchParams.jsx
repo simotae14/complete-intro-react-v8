@@ -20,11 +20,9 @@ const SearchParams = () => {
   const results = useQuery(["search", requestParams], fetchSearch);
   const pets = results?.data?.pets ?? [];
 
-  
   return (
-    <div className="my-0 mx-auto w-11/12">
+    <div className="search-params">
       <form
-        className="mb-10 flex flex-col items-center justify-center rounded-lg bg-gray-200 p-10 shadow-lg"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.target);
@@ -49,14 +47,13 @@ const SearchParams = () => {
             name="location"
             id="location"
             placeholder="Location"
-            className="search-input"
             type="text"
           />
         </label>
         <label htmlFor="animal">
           Animal
           <select
-            className="search-input"
+            name="animal"
             id="animal"
             value={animal}
             onChange={(e) => {
@@ -74,7 +71,6 @@ const SearchParams = () => {
         <label htmlFor="breed">
           Breed
           <select
-            className="search-input grayed-out-disabled"
             id="breed"
             disabled={breeds.length === 0}
             name="breed"
@@ -87,9 +83,7 @@ const SearchParams = () => {
             }
           </select>
         </label>
-        <button
-          className="rounded border-none bg-orange-500 px-6 py-2 text-white hover:opacity-50"
-        >
+        <button>
           Submit
         </button>
       </form>
