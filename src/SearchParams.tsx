@@ -29,7 +29,8 @@ const SearchParams = () => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
           const obj = {
-            animal: formData.get("animal")?.toString() as Animal ?? "" as Animal,
+            animal:
+              (formData.get("animal")?.toString() as Animal) ?? ("" as Animal),
             breed: formData.get("breed")?.toString() ?? "",
             location: formData.get("location")?.toString() ?? "",
           };

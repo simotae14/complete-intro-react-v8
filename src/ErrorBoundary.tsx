@@ -3,7 +3,7 @@ import { Component, ErrorInfo, ReactElement } from "react";
 import { Link } from "react-router-dom";
 
 // add return type of children
-class ErrorBoundary extends Component<{children: ReactElement}> {
+class ErrorBoundary extends Component<{ children: ReactElement }> {
   state = { hasError: false };
   static getDerivedStateFromError() {
     return { hasError: true };

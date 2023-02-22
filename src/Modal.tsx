@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, MutableRefObject, ReactElement } from "react";
+import React, {
+  useEffect,
+  useRef,
+  MutableRefObject,
+  ReactElement,
+} from "react";
 import { createPortal } from "react-dom";
 
 const Modal = ({ children }: { children: ReactElement }) => {
@@ -17,7 +22,7 @@ const Modal = ({ children }: { children: ReactElement }) => {
       if (elRef.current) {
         modalRoot.removeChild(elRef.current);
       }
-    }
+    };
   }, []);
 
   return createPortal(<div>{children}</div>, elRef.current);
