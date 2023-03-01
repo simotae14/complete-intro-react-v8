@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 import Results from "./Results";
 import { useSelector, useDispatch } from "react-redux";
 import useBreedList from "./useBreedList";
-import fetchSearch from "./fetchSearch";
 import { all } from "./searchParamsSlice";
+import { useSearchQuery } from "./petApiService";
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
@@ -13,10 +12,10 @@ const SearchParams = () => {
   const [animal, setAnimal] = useState("");
   const [breeds] = useBreedList(animal);
 
-  const results = useQuery(["search", searchParams], fetchSearch);
+  let { data: pets } = useSearchQuery(searchParams);
+  pets = pets ?? [];
   const dispatch = useDispatch();
-  const pets = results?.data?.pets ?? [];
-
+  
   return (
     <div className="search-params">
       <form
