@@ -1,46 +1,35 @@
 {
-  "name": "complete-intro-react-v8",
-  "version": "1.0.0",
-  "description": "",
+  "name": "citr-v8-project",
+  "version": "8.0.0",
+  "description": "Complete Intro to React v8 project",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:client": "vite build --outDir ../dist/client",
-    "build:server": "vite build --outDir ../dist/server --ssr ServerApp.jsx",
-    "build": "npm run build:client && npm run build:server",
-    "start": "node --experimental-fetch server.js",
+    "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simotae14/complete-intro-react-v8.git"
-  },
   "keywords": [],
-  "author": "Simone Taeggi",
+  "author": "Brian Holt",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/simotae14/complete-intro-react-v8/issues"
-  },
-  "homepage": "https://github.com/simotae14/complete-intro-react-v8#readme",
   "devDependencies": {
-    "@vitejs/plugin-react": "^2.1.0",
-    "eslint": "^8.24.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.8",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1",
-    "vite": "^3.1.4"
+    "@vitejs/plugin-react": "2.1.0",
+    "eslint": "8.24.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-react": "7.31.8",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "2.7.1",
+    "vite": "3.1.4"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.10.1",
-    "express": "^4.18.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.1"
+    "@reduxjs/toolkit": "^1.8.6",
+    "@tanstack/react-query": "4.10.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.4",
+    "react-router-dom": "6.4.1"
   }
 }
