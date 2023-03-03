@@ -20,7 +20,7 @@ class Carousel extends Component {
     const { images } = this.props;
     return (
       <div className="carousel">
-        <img src={images[active]} alt="animal" />
+        <img src={images[active]} alt="animal" data-testid="hero" />
         <div className="carousel-smaller">
           {images.map((photo, index) => (
             // eslint-disable-next-line
@@ -31,6 +31,7 @@ class Carousel extends Component {
               alt="animal thumbnail"
               onClick={this.handleIndexClick}
               data-index={index}
+              data-testid={`thumbnail${index}`}
             />
           ))}
         </div>
