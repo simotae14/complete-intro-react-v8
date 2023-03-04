@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { render } from "@testing-library/react";
+import { renderHook } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import useBreedList from '../useBreedList';
@@ -15,27 +15,15 @@ const queryClient = new QueryClient({
   },
 });
 
-// define a function to inject the fake Component
-function getBreedList(animal) {
-  let list;
-
-  function TestComponent() {
-    list = useBreedList(animal);
-    return null;
-  }
-
-  render(
-    <QueryClientProvider client={queryClient}>
-      <TestComponent />
-    </QueryClientProvider>
-  );
-
-  return list;
-}
-
 // define the test
 test("gives an empty list with no animal", async () => {
-  const [breedList, status] = getBreedList();
+  const { result } = renderHook(() => useBreedList(""), {
+    wrapper: ({ children }) => (
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    ),
+  });
+
+  const [breedList, status] = result.current;
   expect(breedList).toHaveLength(0);
   expect(status).toBe('loading');
 });
