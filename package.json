@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "test": "vitest"
+    "test": "vitest",
+    "update:snapshots": "npm run test -- -u"
   },
   "keywords": [],
   "author": "Brian Holt",
