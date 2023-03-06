@@ -2,26 +2,25 @@ import { Component } from "react";
 
 class Carousel extends Component {
   state = {
-    active: 0, // index first photo
-  }
-
-  static defaultProps = {
-    images: ["http://pets-images.dev-apis.com/pets/none.jpg"]
+    active: 0,
   };
 
-  handleIndexClick = (e) => {
+  static defaultProps = {
+    images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
+  };
+
+  handleIndexClick = (event) => {
     this.setState({
-      active: +e.target.dataset.index
-    })
+      active: +event.target.dataset.index,
+    });
   };
 
   render() {
-    const { active } =  this.state;
+    const { active } = this.state;
     const { images } = this.props;
-
     return (
       <div className="carousel">
-        <img src={images[active]} alt="animal" />
+        <img src={images[active]} alt="animal" data-testid="hero" />
         <div className="carousel-smaller">
           {images.map((photo, index) => (
             // eslint-disable-next-line
@@ -32,11 +31,12 @@ class Carousel extends Component {
               alt="animal thumbnail"
               onClick={this.handleIndexClick}
               data-index={index}
+              data-testid={`thumbnail${index}`}
             />
           ))}
         </div>
       </div>
-    )
+    );
   }
 }
 
